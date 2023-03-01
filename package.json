@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "lintfix": "eslint --fix",
+    "lintfix": "eslint . --fix",
     "start": "nodemon app.js"
   },
   "dependencies": {
@@ -9,6 +9,8 @@
   },
   "devDependencies": {
     "eslint": "^8.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
     "nodemon": "^2.0.20"
   }
 }
