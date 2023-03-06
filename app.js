@@ -1,14 +1,14 @@
 const express = require('express');
-const { getSunrises, getEarliest } = require('./sunrise');
+const { get100Sunrises, getEarliest } = require('./sunrise');
 
 const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-    getSunrises(5, 100)
-        .then((responses) => {
-            const earliestSunrise = getEarliest(responses);
-            const response = { earliestSunrise, responses };
+    get100Sunrises()
+        .then((sunrises) => {
+            const earliestSunrise = getEarliest(sunrises);
+            const response = { earliestSunrise, sunrises };
             res.status(200).send(response);
         }).catch((err) => {
             res.status(501).send(err);
